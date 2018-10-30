@@ -30,20 +30,10 @@ class Settings extends Model
     
     public function getCcConfig()
     {
-        if (!$this->ccEmail) {
+        $emails = $this->prepEmailConfig($this->ccEmail);
+        if (!$emails) {
             return null;
         }
-        
-        $emails = $this->ccEmail;
-        if (!is_array($emails)) {
-            $emails = explode(',', $this->ccEmail);
-        }
-        
-        if (count($emails) < 1) {
-            return null;
-        }
-        
-        $emails = array_map('trim', $emails);
         
         if ($this->ccName) {
             $names = explode(',', $this->ccName);
@@ -70,5 +60,29 @@ class Settings extends Model
         return [
             [['ccEmail', 'ccName'], 'string'],
         ];
+    }
+    
+    
+    
+    // Protected Methods
+    // =========================================================================
+    
+    protected function prepEmailConfig($emails)
+    {
+        if (!$emails) {
+            return null;
+        }
+        
+        if (!is_array($emails)) {
+            $emails = explode(',', $emails);
+        }
+        
+        if (count($emails) < 1) {
+            return null;
+        }
+        
+        $emails = array_map('trim', $emails);
+        
+        return $emails;
     }
 }
