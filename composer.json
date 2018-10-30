@@ -1,0 +1,40 @@
+{
+    "name": "miranj/craft-contact-form-nuances",
+    "description": "Adds a bunch of additional controls (cc) to the Craft CMS Contact Form plugin.",
+    "version": "1.0.0-dev",
+    "type": "craft-plugin",
+    "keywords": [
+        "craft",
+        "craftcms",
+        "contact",
+        "form",
+        "email"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Miranj",
+            "homepage": "https://miranj.in/"
+        }
+    ],
+    "support": {
+        "docs": "https://github.com/miranj/craft-contact-form-nuances/blob/master/README.md",
+        "issues": "https://github.com/miranj/craft-contact-form-nuances/issues"
+    },
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1",
+        "craftcms/contact-form": "^2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "miranj\\contactformnuances\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Contact Form Nuances",
+        "handle": "contact-form-nuances",
+        "hasCpSettings": true,
+        "changelogUrl": "https://raw.githubusercontent.com/miranj/craft-contact-form-nuances/master/CHANGELOG.md",
+        "class": "miranj\\contactformnuances\\Plugin"
+    }
+}

@@ -1,0 +1,37 @@
+{% import "_includes/forms" as forms %}
+
+{% macro configWarning(setting) -%}
+    {% set setting = '<code>'~setting~'</code>' %}
+    {{ "This is being overridden by the {setting} config setting in your {file} config file."|t('contact-form', {
+        setting: setting,
+        file: 'contact-form-nuances.php'
+    })|raw }}
+{%- endmacro %}
+
+{% from _self import configWarning %}
+
+{{ forms.textField({
+    first:        true,
+    label:        "Cc Email"|t('contact-form-nuances'),
+    id:           'ccEmail',
+    name:         'ccEmail',
+    instructions: "The email address(es) that the contact form will CC to. Separate multiple email addresses with commas."|t('contact-form-nuances'),
+    value:        settings.ccEmail,
+    autofocus:    true,
+    disabled:     'ccEmail' in overrides,
+    warning:      'ccEmail' in overrides ? configWarning('ccEmail'),
+    errors:       settings.getErrors('ccEmail'),
+}) }}
+
+{{ forms.textField({
+    first:        true,
+    label:        "Cc Name"|t('contact-form-nuances'),
+    id:           'ccName',
+    name:         'ccName',
+    instructions: "Text that will be prepended to the email address(es) that the contact form will CC to."|t('contact-form-nuances'),
+    value:        settings.ccName,
+    autofocus:    true,
+    disabled:     'ccName' in overrides,
+    warning:      'ccName' in overrides ? configWarning('ccName'),
+    errors:       settings.getErrors('ccName'),
+}) }}
