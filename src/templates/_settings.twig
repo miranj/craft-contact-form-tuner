@@ -48,3 +48,14 @@
     warning:      'bccEmail' in overrides ? configWarning('bccEmail'),
     errors:       settings.getErrors('bccEmail'),
 }) }}
+
+{{ forms.lightswitchField({
+    label:        "Hide Reply-To"|t('contact-form-nuances'),
+    id:           'hideReplyTo',
+    name:         'hideReplyTo',
+    instructions: 'Disables the _Reply To_ field completely (including the default behaviour of setting the From Email as the _Reply To_ address).'|t('contact-form-nuances'),
+    on:           settings.hideReplyTo,
+    disabled:     'hideReplyTo' in overrides,
+    warning:      'hideReplyTo' in overrides ? configWarning('hideReplyTo'),
+    errors:       settings.getErrors('hideReplyTo')
+}) }}

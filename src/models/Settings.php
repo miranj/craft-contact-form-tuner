@@ -28,6 +28,10 @@ class Settings extends Model
      */
     public $bccEmail = null;
     
+    /**
+     * @var bool
+     */
+    public $hideReplyTo = false;
     
     
     // Public Methods

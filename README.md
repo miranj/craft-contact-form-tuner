@@ -47,11 +47,11 @@ return [
     'ccEmail'     => 'copyme@example.com',
     'ccName'      => 'In the loop',
     'bccEmail'    => 'batman@example.com',
+    'hideReplyTo' => true,
 ];
 ```
 
 ## Roadmap
-- Disable Reply-to
 - Plaintext only
 
 
