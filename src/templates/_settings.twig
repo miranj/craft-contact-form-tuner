@@ -16,7 +16,7 @@
     id:           'ccEmail',
     name:         'ccEmail',
     instructions: "The email address(es) that the contact form will CC to. Separate multiple email addresses with commas."|t('contact-form-nuances'),
-    value:        settings.ccEmail,
+    value:        settings.ccEmail is iterable ? settings.ccEmail|join(', ') : settings.ccEmail,
     autofocus:    true,
     disabled:     'ccEmail' in overrides,
     warning:      'ccEmail' in overrides ? configWarning('ccEmail'),
