@@ -1,6 +1,6 @@
 # Contact Form Nuances plugin for Craft CMS 3.x
 
-Adds a bunch of additional controls (cc) to the Craft CMS [Contact Form plugin][cf].
+Adds a bunch of additional controls (cc, bcc) to the Craft CMS [Contact Form plugin][cf].
 
 
 ## Requirements
@@ -40,16 +40,17 @@ All settings for this plugin can be configured from the Control Panel under Sett
 
 Here is a sample config file along with a list of all possible settings:
 
-    <?php
-    
-    return [
-        'ccEmail'     => 'copyme@example.com',
-        'ccName'      => 'In the loop',
-    ];
+```php
+<?php
 
+return [
+    'ccEmail'     => 'copyme@example.com',
+    'ccName'      => 'In the loop',
+    'bccEmail'    => 'batman@example.com',
+];
+```
 
 ## Roadmap
-- Bcc recipients
 - Disable Reply-to
 - Plaintext only
 

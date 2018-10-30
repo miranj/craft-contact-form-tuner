@@ -36,6 +36,7 @@ class Plugin extends craft\base\Plugin
         Event::on(Mailer::class, Mailer::EVENT_BEFORE_SEND, function(SendEvent $e) {
             $settings = $this->getSettings();
             $e->message->setCc($settings->ccConfig);
+            $e->message->setBcc($settings->bccConfig);
         });
         
         Craft::info(

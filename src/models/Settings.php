@@ -23,6 +23,11 @@ class Settings extends Model
      */
     public $ccName = null;
     
+    /**
+     * @var string|string[]|null
+     */
+    public $bccEmail = null;
+    
     
     
     // Public Methods
@@ -49,6 +54,12 @@ class Settings extends Model
             $emails = array_combine($emails, $names);
         }
         
+        return $emails;
+    }
+    
+    public function getBccConfig()
+    {
+        $emails = $this->prepEmailConfig($this->bccEmail);
         return $emails;
     }
     

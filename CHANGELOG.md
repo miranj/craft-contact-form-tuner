@@ -11,4 +11,5 @@ Release notes for the Obfuscator Craft CMS plugin.
 ### Added
 
 - Added the ability to CC contact form submissions.
+- Added the ability to BCC contact form submissions.
 
