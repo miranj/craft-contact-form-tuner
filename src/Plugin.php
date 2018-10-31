@@ -42,10 +42,38 @@ class Plugin extends craft\base\Plugin
             
             if ($settings->hideReplyTo) {
                 $message->setReplyTo(null);
-            
+                
             // Override Reply-To only if it has a value
             } elseif ($settings->replyToConfig) {
                 $message->setReplyTo($settings->replyToConfig);
+            }
+            
+            if ($settings->plainTextOnly) {
+                // We cannot simply set the HTML to null
+                // because that does not remove the html part completely.
+                // So instead, we re-create the entire underlying message
+                // and re-add all parts except the text/html part
+                $swiftMessage = $message->getSwiftMessage();
+                $oldParts = $swiftMessage->getChildren();
+                $oldParts = array_filter($oldParts, function ($part) {
+                    return $part->getContentType() != 'text/html';
+                });
+                
+                // reset message
+                $swiftMessage->setBody(null);
+                $swiftMessage->setContentType(null);
+                $swiftMessage->setChildren([]);
+                
+                // If it remains a multi-part message, then simply re-add parts
+                if (count($oldParts) > 1) {
+                    $swiftMessage->setChildren($oldParts);
+                } elseif (count($oldParts) == 1) {
+                    // otherwise, add the single part directly, not as an attachment
+                    $swiftMessage->setBody(
+                        $oldParts[0]->getBody(),
+                        $oldParts[0]->getContentType()
+                    );
+                }
             }
         });
         

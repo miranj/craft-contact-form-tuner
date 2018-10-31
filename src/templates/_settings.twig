@@ -82,3 +82,14 @@
         errors:       settings.getErrors('replyToName'),
     }) }}
 </div>
+
+{{ forms.lightswitchField({
+    label:        "Plain Text Only"|t('contact-form-nuances'),
+    id:           'plainTextOnly',
+    name:         'plainTextOnly',
+    instructions: 'Sends plain-text-only emails'|t('contact-form-nuances'),
+    on:           settings.plainTextOnly,
+    disabled:     'plainTextOnly' in overrides,
+    warning:      'plainTextOnly' in overrides ? configWarning('plainTextOnly'),
+    errors:       settings.getErrors('plainTextOnly'),
+}) }}

@@ -1,6 +1,6 @@
 {
     "name": "miranj/craft-contact-form-nuances",
-    "description": "Adds a bunch of additional controls (cc, bcc, reply-to) to the Craft CMS Contact Form plugin.",
+    "description": "Adds a bunch of additional controls (cc, bcc, reply-to, force plain text) to the Craft CMS Contact Form plugin.",
     "version": "1.0.0-dev",
     "type": "craft-plugin",
     "keywords": [

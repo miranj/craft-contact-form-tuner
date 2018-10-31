@@ -1,6 +1,6 @@
 # Contact Form Nuances plugin for Craft CMS 3.x
 
-Adds a bunch of additional controls (cc, bcc, reply-to) to the Craft CMS [Contact Form plugin][cf].
+Adds a bunch of additional controls (cc, bcc, reply-to, force plain text) to the Craft CMS [Contact Form plugin][cf].
 
 
 ## Requirements
@@ -50,11 +50,12 @@ return [
     'hideReplyTo'   => false,
     'replyToEmail'  => 'sales@example.com',
     'replyToName'   => 'Sales',
+    'plainTextOnly' => false,
 ];
 ```
 
 ## Roadmap
-- Plaintext only
+- Custom template
 
 
 ---

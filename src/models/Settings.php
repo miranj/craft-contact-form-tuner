@@ -35,6 +35,11 @@ class Settings extends Model
     public $replyToEmail = null;
     public $replyToName = null;
     
+    /**
+     * @var bool
+     */
+    public $plainTextOnly = false;
+    
     // Public Methods
     // =========================================================================
     
