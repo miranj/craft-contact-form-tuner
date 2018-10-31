@@ -28,7 +28,7 @@
     id:           'ccName',
     name:         'ccName',
     instructions: "Separate multiple names with commas."|t('contact-form-nuances'),
-    value:        settings.ccName,
+    value:        settings.ccName is iterable ? settings.ccName|join(', ') : settings.ccName,
     disabled:     'ccName' in overrides,
     warning:      'ccName' in overrides ? configWarning('ccName'),
     errors:       settings.getErrors('ccName'),

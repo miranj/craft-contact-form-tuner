@@ -19,7 +19,7 @@ class Settings extends Model
     public $ccEmail = null;
     
     /**
-     * @var string
+     * @var string|string[]|null
      */
     public $ccName = null;
     
@@ -45,7 +45,10 @@ class Settings extends Model
         }
         
         if ($this->ccName) {
-            $names = explode(',', $this->ccName);
+            $names = $this->ccName;
+            if (!is_array($names)) {
+                $names = explode(',', $names);
+            }
             $names = array_map('trim', $names);
             
             // Create a matching email => name array, accounting for empty spots
@@ -73,7 +76,6 @@ class Settings extends Model
     public function rules()
     {
         return [
-            [['ccName'], 'string'],
             [['hideReplyTo'], 'boolean'],
         ];
     }
@@ -93,7 +95,7 @@ class Settings extends Model
             $emails = explode(',', $emails);
         }
         
-        if (count($emails) < 1) {
+        if (empty($emails)) {
             return null;
         }
         
