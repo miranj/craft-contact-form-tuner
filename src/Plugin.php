@@ -42,6 +42,10 @@ class Plugin extends craft\base\Plugin
             
             if ($settings->hideReplyTo) {
                 $message->setReplyTo(null);
+            
+            // Override Reply-To only if it has a value
+            } elseif ($settings->replyToConfig) {
+                $message->setReplyTo($settings->replyToConfig);
             }
         });
         

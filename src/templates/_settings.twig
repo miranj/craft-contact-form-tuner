@@ -54,4 +54,31 @@
     disabled:     'hideReplyTo' in overrides,
     warning:      'hideReplyTo' in overrides ? configWarning('hideReplyTo'),
     errors:       settings.getErrors('hideReplyTo'),
+    reverseToggle:'replyToContainer',
 }) }}
+
+<div id="replyToContainer" class="nested-fields{% if settings.hideReplyTo %} hidden{% endif %}">
+    {{ forms.textField({
+        label:        "Reply-To Email"|t('contact-form-nuances'),
+        id:           'replyToEmail',
+        name:         'replyToEmail',
+        instructions: "Separate multiple email addresses with commas."|t('contact-form-nuances'),
+        value:        settings.replyToEmail is iterable ? settings.replyToEmail|join(', ') : settings.replyToEmail,
+        placeholder:  'Contact Form sets this to the ‘From’ email by default.'|t('contact-form-nuances'),
+        disabled:     'replyToEmail' in overrides,
+        warning:      'replyToEmail' in overrides ? configWarning('replyToEmail'),
+        errors:       settings.getErrors('replyToEmail'),
+    }) }}
+    
+    {{ forms.textField({
+        label:        "Reply-To Name"|t('contact-form-nuances'),
+        id:           'replyToName',
+        name:         'replyToName',
+        instructions: "Separate multiple names with commas."|t('contact-form-nuances'),
+        value:        settings.replyToName is iterable ? settings.replyToName|join(', ') : settings.replyToName,
+        placeholder:  'Contact Form sets this to the ‘From’ name by default.'|t('contact-form-nuances'),
+        disabled:     'replyToName' in overrides,
+        warning:      'replyToName' in overrides ? configWarning('replyToName'),
+        errors:       settings.getErrors('replyToName'),
+    }) }}
+</div>

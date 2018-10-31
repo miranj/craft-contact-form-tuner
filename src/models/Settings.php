@@ -29,6 +29,11 @@ class Settings extends Model
      */
     public $hideReplyTo = false;
     
+    /**
+     * @var string|string[]|null
+     */
+    public $replyToEmail = null;
+    public $replyToName = null;
     
     // Public Methods
     // =========================================================================
@@ -42,6 +47,12 @@ class Settings extends Model
     public function getBccConfig()
     {
         $emails = $this->prepEmailConfig($this->bccEmail);
+        return $emails;
+    }
+    
+    public function getReplyToConfig()
+    {
+        $emails = $this->prepEmailConfig($this->replyToEmail, $this->replyToName);
         return $emails;
     }
     

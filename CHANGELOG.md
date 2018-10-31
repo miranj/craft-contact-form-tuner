@@ -12,5 +12,6 @@ Release notes for the Obfuscator Craft CMS plugin.
 
 - Added the ability to CC contact form submissions.
 - Added the ability to BCC contact form submissions.
-- Added the ability to disable the Reply To header.
+- Added the ability to disable the Reply-To header.
+- Added the ability to specify Reply-To email(s).
 
