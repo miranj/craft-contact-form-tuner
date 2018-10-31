@@ -17,10 +17,6 @@ class Settings extends Model
      * @var string|string[]|null
      */
     public $ccEmail = null;
-    
-    /**
-     * @var string|string[]|null
-     */
     public $ccName = null;
     
     /**
@@ -40,24 +36,14 @@ class Settings extends Model
     public function getCcConfig()
     {
         $emails = $this->prepEmailConfig($this->ccEmail);
-        if (!$emails) {
-            return null;
-        }
         
-        if ($this->ccName) {
+        if ($this->ccName && $emails !== null) {
             $names = $this->ccName;
-            if (!is_array($names)) {
-                $names = explode(',', $names);
-            }
-            $names = array_map('trim', $names);
+            $names = $this->prepCommaSeparatedValue($names);
             
-            // Create a matching email => name array, accounting for empty spots
-            if (count($names) < count($emails)) {
-                $names = array_merge(
-                    $names,
-                    array_fill(0, count($emails) - count($names), '')
-                );
-            }
+            // Create a matching email => name array, accounting for empty & extra spots
+            $names = array_merge($names, array_fill(0, count($emails) - count($names), ''));
+            $names = array_slice($names, 0, count($emails));
             $emails = array_combine($emails, $names);
         }
         
@@ -85,21 +71,33 @@ class Settings extends Model
     // Protected Methods
     // =========================================================================
     
-    protected function prepEmailConfig($emails)
+    /*
+     * @returns string[]
+     */
+    protected function prepCommaSeparatedValue($value)
     {
-        if (!$emails) {
-            return null;
+        if (!$value) {
+            return [];
         }
         
-        if (!is_array($emails)) {
-            $emails = explode(',', $emails);
+        if (!is_array($value)) {
+            $value = explode(',', $value);
         }
+        $value = array_map('trim', $value);
+        
+        return $value;
+    }
+    
+    /*
+     * @returns string[] | null
+     */
+    protected function prepEmailConfig($emails)
+    {
+        $emails = $this->prepCommaSeparatedValue($emails);
         
         if (empty($emails)) {
             return null;
         }
-        
-        $emails = array_map('trim', $emails);
         
         return $emails;
     }
