@@ -15,7 +15,7 @@
     label:        "Cc Email"|t('contact-form-nuances'),
     id:           'ccEmail',
     name:         'ccEmail',
-    instructions: "The email address(es) that the contact form will CC to. Separate multiple email addresses with commas."|t('contact-form-nuances'),
+    instructions: "Separate multiple email addresses with commas."|t('contact-form-nuances'),
     value:        settings.ccEmail is iterable ? settings.ccEmail|join(', ') : settings.ccEmail,
     autofocus:    true,
     disabled:     'ccEmail' in overrides,
@@ -24,11 +24,10 @@
 }) }}
 
 {{ forms.textField({
-    first:        true,
     label:        "Cc Name"|t('contact-form-nuances'),
     id:           'ccName',
     name:         'ccName',
-    instructions: "Text that will be prepended to the email address(es) that the contact form will CC to. Separate multiple names with commas."|t('contact-form-nuances'),
+    instructions: "Separate multiple names with commas."|t('contact-form-nuances'),
     value:        settings.ccName,
     disabled:     'ccName' in overrides,
     warning:      'ccName' in overrides ? configWarning('ccName'),
@@ -36,11 +35,10 @@
 }) }}
 
 {{ forms.textField({
-    first:        true,
     label:        "Bcc Email"|t('contact-form-nuances'),
     id:           'bccEmail',
     name:         'bccEmail',
-    instructions: "The email address(es) that the contact form will BCC to. Separate multiple email addresses with commas."|t('contact-form-nuances'),
+    instructions: "Separate multiple email addresses with commas."|t('contact-form-nuances'),
     value:        settings.bccEmail is iterable ? settings.bccEmail|join(', ') : settings.bccEmail,
     disabled:     'bccEmail' in overrides,
     warning:      'bccEmail' in overrides ? configWarning('bccEmail'),
@@ -51,7 +49,7 @@
     label:        "Hide Reply-To"|t('contact-form-nuances'),
     id:           'hideReplyTo',
     name:         'hideReplyTo',
-    instructions: 'Disables the _Reply To_ field completely (including the default behaviour of setting the From Email as the _Reply To_ address).'|t('contact-form-nuances'),
+    instructions: 'Disables the _Reply-To_ field completely (including the default behaviour of setting the ‘From’ email as the _Reply-To_ address).'|t('contact-form-nuances'),
     on:           settings.hideReplyTo,
     disabled:     'hideReplyTo' in overrides,
     warning:      'hideReplyTo' in overrides ? configWarning('hideReplyTo'),
