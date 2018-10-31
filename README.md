@@ -38,18 +38,20 @@ All settings for this plugin can be configured from the Control Panel under Sett
 [config]:https://docs.craftcms.com/v3/config/
 [multi]:https://docs.craftcms.com/v3/config/environments.html#multi-environment-configs
 
-Here is a sample config file along with a list of all possible settings:
+Here is a sample config file along with a list of all possible settings with their default values:
 
 ```php
 <?php
 
 return [
-    'ccEmail'       => 'copyme@example.com',
-    'ccName'        => 'In the loop',
-    'bccEmail'      => 'batman@example.com',
+    'ccEmail'       => '',      // e.g. 'ccme@example.com' or ['one@example.com', 'two@example.com']
+    'ccName'        => '',
+    'bccEmail'      => '',
+    
     'hideReplyTo'   => false,
-    'replyToEmail'  => 'sales@example.com',
-    'replyToName'   => 'Sales',
+    'replyToEmail'  => '',      // leaving this empty preserves the reply-to set by Contact Form
+    'replyToName'   => '',
+    
     'plainTextOnly' => false,
 ];
 ```
