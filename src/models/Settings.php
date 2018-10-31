@@ -35,18 +35,7 @@ class Settings extends Model
     
     public function getCcConfig()
     {
-        $emails = $this->prepEmailConfig($this->ccEmail);
-        
-        if ($this->ccName && $emails !== null) {
-            $names = $this->ccName;
-            $names = $this->prepCommaSeparatedValue($names);
-            
-            // Create a matching email => name array, accounting for empty & extra spots
-            $names = array_merge($names, array_fill(0, count($emails) - count($names), ''));
-            $names = array_slice($names, 0, count($emails));
-            $emails = array_combine($emails, $names);
-        }
-        
+        $emails = $this->prepEmailConfig($this->ccEmail, $this->ccName);
         return $emails;
     }
     
@@ -91,12 +80,20 @@ class Settings extends Model
     /*
      * @returns string[] | null
      */
-    protected function prepEmailConfig($emails)
+    protected function prepEmailConfig($emails, $names = null)
     {
         $emails = $this->prepCommaSeparatedValue($emails);
+        $names = $this->prepCommaSeparatedValue($names);
         
         if (empty($emails)) {
             return null;
+        }
+        
+        // Create a matching [ email => name ] array, accounting for empty/extra spots
+        if (!empty($names)) {
+            $names = array_merge($names, array_fill(0, count($emails) - count($names), ''));
+            $names = array_slice($names, 0, count($emails));
+            $emails = array_combine($emails, $names);
         }
         
         return $emails;
