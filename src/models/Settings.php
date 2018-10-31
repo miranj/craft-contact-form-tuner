@@ -74,6 +74,7 @@ class Settings extends Model
     {
         return [
             [['ccName'], 'string'],
+            [['hideReplyTo'], 'boolean'],
         ];
     }
     
