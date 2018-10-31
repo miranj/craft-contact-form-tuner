@@ -73,7 +73,7 @@ class Settings extends Model
     public function rules()
     {
         return [
-            [['ccEmail', 'ccName'], 'string'],
+            [['ccName'], 'string'],
         ];
     }
     
