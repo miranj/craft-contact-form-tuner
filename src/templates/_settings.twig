@@ -30,7 +30,6 @@
     name:         'ccName',
     instructions: "Text that will be prepended to the email address(es) that the contact form will CC to. Separate multiple names with commas."|t('contact-form-nuances'),
     value:        settings.ccName,
-    autofocus:    true,
     disabled:     'ccName' in overrides,
     warning:      'ccName' in overrides ? configWarning('ccName'),
     errors:       settings.getErrors('ccName'),
@@ -43,7 +42,6 @@
     name:         'bccEmail',
     instructions: "The email address(es) that the contact form will BCC to. Separate multiple email addresses with commas."|t('contact-form-nuances'),
     value:        settings.bccEmail is iterable ? settings.bccEmail|join(', ') : settings.bccEmail,
-    autofocus:    true,
     disabled:     'bccEmail' in overrides,
     warning:      'bccEmail' in overrides ? configWarning('bccEmail'),
     errors:       settings.getErrors('bccEmail'),
@@ -57,5 +55,5 @@
     on:           settings.hideReplyTo,
     disabled:     'hideReplyTo' in overrides,
     warning:      'hideReplyTo' in overrides ? configWarning('hideReplyTo'),
-    errors:       settings.getErrors('hideReplyTo')
+    errors:       settings.getErrors('hideReplyTo'),
 }) }}
