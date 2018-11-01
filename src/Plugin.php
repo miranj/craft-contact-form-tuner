@@ -2,8 +2,6 @@
 /**
  * Contact Form Extras plugin for Craft CMS 3.x
  *
- * Adds a bunch of additional controls (cc, bcc, reply-to, plaintext) to the Craft CMS Contact Form plugin.
- *
  * @link      https://miranj.in/
  * @copyright Copyright (c) Miranj Design LLP
  */
@@ -70,7 +68,7 @@ class Plugin extends craft\base\Plugin
                 $message->setTextBody($textBody);
             }
             
-            if ($settings->htmlTemplate && !$settings->plainTextOnly) {
+            if ($settings->htmlTemplate && !$settings->textOnly) {
                 $oldTemplateMode = Craft::$app->view->getTemplateMode();
                 Craft::$app->view->setTemplateMode(View::TEMPLATE_MODE_SITE);
                 $htmlBody = Craft::$app->view->renderTemplate(
@@ -87,7 +85,7 @@ class Plugin extends craft\base\Plugin
             // 
             // Force plain text
             // 
-            if ($settings->plainTextOnly) {
+            if ($settings->textOnly) {
                 // We cannot simply set the HTML to null
                 // because that does not remove the html part completely.
                 // So instead, we re-create the entire underlying message

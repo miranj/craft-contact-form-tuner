@@ -52,7 +52,7 @@ return [
     'replyToEmail'  => '',      // leaving this empty preserves the reply-to set by Contact Form
     'replyToName'   => '',
     
-    'plainTextOnly' => false,
+    'textOnly'      => false,   // enabling this forces the email to be sent in plain text only
     'textTemplate'  => '',
     'htmlTemplate'  => '',
 ];

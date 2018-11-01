@@ -85,13 +85,13 @@
 
 {{ forms.lightswitchField({
     label:        "Plain Text Only"|t('contact-form-extras'),
-    id:           'plainTextOnly',
-    name:         'plainTextOnly',
+    id:           'textOnly',
+    name:         'textOnly',
     instructions: 'Sends plain-text-only emails.'|t('contact-form-extras'),
-    on:           settings.plainTextOnly,
-    disabled:     'plainTextOnly' in overrides,
-    warning:      'plainTextOnly' in overrides ? configWarning('plainTextOnly'),
-    errors:       settings.getErrors('plainTextOnly'),
+    on:           settings.textOnly,
+    disabled:     'textOnly' in overrides,
+    warning:      'textOnly' in overrides ? configWarning('textOnly'),
+    errors:       settings.getErrors('textOnly'),
     reverseToggle:'htmlTemplateContainer',
 }) }}
 
@@ -106,7 +106,7 @@
     errors:       settings.getErrors('textTemplate'),
 }) }}
 
-<div id="htmlTemplateContainer" class="nested-fields{% if settings.plainTextOnly %} hidden{% endif %}">
+<div id="htmlTemplateContainer" class="nested-fields{% if settings.textOnly %} hidden{% endif %}">
     {{ forms.textField({
         label:        "HTML Template"|t('contact-form-extras'),
         id:           'htmlTemplate',

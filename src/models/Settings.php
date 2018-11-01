@@ -38,7 +38,7 @@ class Settings extends Model
     /**
      * @var bool
      */
-    public $plainTextOnly = false;
+    public $textOnly = false;
     
     /**
      * @var string|null
