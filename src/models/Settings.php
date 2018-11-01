@@ -40,6 +40,12 @@ class Settings extends Model
      */
     public $plainTextOnly = false;
     
+    /**
+     * @var string|null
+     */
+    public $textTemplate = null;
+    public $htmlTemplate = null;
+    
     // Public Methods
     // =========================================================================
     
@@ -68,6 +74,7 @@ class Settings extends Model
     {
         return [
             [['hideReplyTo'], 'boolean'],
+            [['textTemplate', 'htmlTemplate'], 'string'],
         ];
     }
     

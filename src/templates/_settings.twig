@@ -87,9 +87,34 @@
     label:        "Plain Text Only"|t('contact-form-nuances'),
     id:           'plainTextOnly',
     name:         'plainTextOnly',
-    instructions: 'Sends plain-text-only emails'|t('contact-form-nuances'),
+    instructions: 'Sends plain-text-only emails.'|t('contact-form-nuances'),
     on:           settings.plainTextOnly,
     disabled:     'plainTextOnly' in overrides,
     warning:      'plainTextOnly' in overrides ? configWarning('plainTextOnly'),
     errors:       settings.getErrors('plainTextOnly'),
+    reverseToggle:'htmlTemplateContainer',
 }) }}
+
+{{ forms.textField({
+    label:        "Plain Text Template"|t('contact-form-nuances'),
+    id:           'textTemplate',
+    name:         'textTemplate',
+    instructions: 'Path to file inside your `templates` folder.',
+    value:        settings.textTemplate,
+    disabled:     'textTemplate' in overrides,
+    warning:      'textTemplate' in overrides ? configWarning('textTemplate'),
+    errors:       settings.getErrors('textTemplate'),
+}) }}
+
+<div id="htmlTemplateContainer" class="nested-fields{% if settings.plainTextOnly %} hidden{% endif %}">
+    {{ forms.textField({
+        label:        "HTML Template"|t('contact-form-nuances'),
+        id:           'htmlTemplate',
+        name:         'htmlTemplate',
+        instructions: 'Path to file inside your `templates` folder.',
+        value:        settings.htmlTemplate,
+        disabled:     'htmlTemplate' in overrides,
+        warning:      'htmlTemplate' in overrides ? configWarning('htmlTemplate'),
+        errors:       settings.getErrors('htmlTemplate'),
+    }) }}
+</div>

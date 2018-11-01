@@ -13,6 +13,8 @@ namespace miranj\contactformnuances;
 use miranj\contactformnuances\models\Settings;
 
 use Craft;
+use craft\helpers\Html;
+use craft\web\View;
 use craft\contactform\events\SendEvent;
 use craft\contactform\Mailer;
 use yii\base\Event;
@@ -49,6 +51,38 @@ class Plugin extends craft\base\Plugin
                 // Override Reply-To only if it has a value
                 $message->setReplyTo($settings->replyToConfig);
             }
+            
+            
+            
+            // 
+            // Override message body templates
+            // 
+            if ($settings->textTemplate) {
+                $oldTemplateMode = Craft::$app->view->getTemplateMode();
+                Craft::$app->view->setTemplateMode(View::TEMPLATE_MODE_SITE);
+                $textBody = Craft::$app->view->renderTemplate(
+                    $settings->textTemplate,
+                    $e->submission->toArray()
+                );
+                Craft::$app->view->setTemplateMode($oldTemplateMode);
+                
+                $textBody = Html::decode($textBody);
+                $message->setTextBody($textBody);
+            }
+            
+            if ($settings->htmlTemplate && !$settings->plainTextOnly) {
+                $oldTemplateMode = Craft::$app->view->getTemplateMode();
+                Craft::$app->view->setTemplateMode(View::TEMPLATE_MODE_SITE);
+                $htmlBody = Craft::$app->view->renderTemplate(
+                    $settings->htmlTemplate,
+                    $e->submission->toArray()
+                );
+                Craft::$app->view->setTemplateMode($oldTemplateMode);
+                
+                $message->setHtmlBody($htmlBody);
+            }
+            
+            
             
             // 
             // Force plain text
