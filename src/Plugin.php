@@ -37,17 +37,22 @@ class Plugin extends craft\base\Plugin
             $settings = $this->getSettings();
             $message = $e->message;
             
+            //
+            // Override cc, bcc, reply-to headers
+            //
             $message->setCc($settings->ccConfig);
             $message->setBcc($settings->bccConfig);
             
             if ($settings->hideReplyTo) {
                 $message->setReplyTo(null);
-                
-            // Override Reply-To only if it has a value
             } elseif ($settings->replyToConfig) {
+                // Override Reply-To only if it has a value
                 $message->setReplyTo($settings->replyToConfig);
             }
             
+            // 
+            // Force plain text
+            // 
             if ($settings->plainTextOnly) {
                 // We cannot simply set the HTML to null
                 // because that does not remove the html part completely.
@@ -69,9 +74,10 @@ class Plugin extends craft\base\Plugin
                     $swiftMessage->setChildren($oldParts);
                 } elseif (count($oldParts) == 1) {
                     // otherwise, add the single part directly, not as an attachment
+                    $part = array_pop($oldParts);
                     $swiftMessage->setBody(
-                        $oldParts[0]->getBody(),
-                        $oldParts[0]->getContentType()
+                        $part->getBody(),
+                        $part->getContentType()
                     );
                 }
             }
