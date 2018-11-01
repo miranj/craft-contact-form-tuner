@@ -4,7 +4,7 @@
     {% set setting = '<code>'~setting~'</code>' %}
     {{ "This is being overridden by the {setting} config setting in your {file} config file."|t('contact-form', {
         setting: setting,
-        file: 'contact-form-nuances.php'
+        file: 'contact-form-extras.php'
     })|raw }}
 {%- endmacro %}
 
@@ -12,10 +12,10 @@
 
 {{ forms.textField({
     first:        true,
-    label:        "Cc Email"|t('contact-form-nuances'),
+    label:        "Cc Email"|t('contact-form-extras'),
     id:           'ccEmail',
     name:         'ccEmail',
-    instructions: "Separate multiple email addresses with commas."|t('contact-form-nuances'),
+    instructions: "Separate multiple email addresses with commas."|t('contact-form-extras'),
     value:        settings.ccEmail is iterable ? settings.ccEmail|join(', ') : settings.ccEmail,
     autofocus:    true,
     disabled:     'ccEmail' in overrides,
@@ -24,10 +24,10 @@
 }) }}
 
 {{ forms.textField({
-    label:        "Cc Name"|t('contact-form-nuances'),
+    label:        "Cc Name"|t('contact-form-extras'),
     id:           'ccName',
     name:         'ccName',
-    instructions: "Separate multiple names with commas."|t('contact-form-nuances'),
+    instructions: "Separate multiple names with commas."|t('contact-form-extras'),
     value:        settings.ccName is iterable ? settings.ccName|join(', ') : settings.ccName,
     disabled:     'ccName' in overrides,
     warning:      'ccName' in overrides ? configWarning('ccName'),
@@ -35,10 +35,10 @@
 }) }}
 
 {{ forms.textField({
-    label:        "Bcc Email"|t('contact-form-nuances'),
+    label:        "Bcc Email"|t('contact-form-extras'),
     id:           'bccEmail',
     name:         'bccEmail',
-    instructions: "Separate multiple email addresses with commas."|t('contact-form-nuances'),
+    instructions: "Separate multiple email addresses with commas."|t('contact-form-extras'),
     value:        settings.bccEmail is iterable ? settings.bccEmail|join(', ') : settings.bccEmail,
     disabled:     'bccEmail' in overrides,
     warning:      'bccEmail' in overrides ? configWarning('bccEmail'),
@@ -46,10 +46,10 @@
 }) }}
 
 {{ forms.lightswitchField({
-    label:        "Hide Reply-To"|t('contact-form-nuances'),
+    label:        "Hide Reply-To"|t('contact-form-extras'),
     id:           'hideReplyTo',
     name:         'hideReplyTo',
-    instructions: 'Disables the _Reply-To_ field completely (including the default behaviour of setting the ‘From’ email as the _Reply-To_ address).'|t('contact-form-nuances'),
+    instructions: 'Disables the _Reply-To_ field completely (including the default behaviour of setting the ‘From’ email as the _Reply-To_ address).'|t('contact-form-extras'),
     on:           settings.hideReplyTo,
     disabled:     'hideReplyTo' in overrides,
     warning:      'hideReplyTo' in overrides ? configWarning('hideReplyTo'),
@@ -59,24 +59,24 @@
 
 <div id="replyToContainer" class="nested-fields{% if settings.hideReplyTo %} hidden{% endif %}">
     {{ forms.textField({
-        label:        "Reply-To Email"|t('contact-form-nuances'),
+        label:        "Reply-To Email"|t('contact-form-extras'),
         id:           'replyToEmail',
         name:         'replyToEmail',
-        instructions: "Separate multiple email addresses with commas."|t('contact-form-nuances'),
+        instructions: "Separate multiple email addresses with commas."|t('contact-form-extras'),
         value:        settings.replyToEmail is iterable ? settings.replyToEmail|join(', ') : settings.replyToEmail,
-        placeholder:  'Contact Form sets this to the ‘From’ email by default.'|t('contact-form-nuances'),
+        placeholder:  'Contact Form sets this to the ‘From’ email by default.'|t('contact-form-extras'),
         disabled:     'replyToEmail' in overrides,
         warning:      'replyToEmail' in overrides ? configWarning('replyToEmail'),
         errors:       settings.getErrors('replyToEmail'),
     }) }}
     
     {{ forms.textField({
-        label:        "Reply-To Name"|t('contact-form-nuances'),
+        label:        "Reply-To Name"|t('contact-form-extras'),
         id:           'replyToName',
         name:         'replyToName',
-        instructions: "Separate multiple names with commas."|t('contact-form-nuances'),
+        instructions: "Separate multiple names with commas."|t('contact-form-extras'),
         value:        settings.replyToName is iterable ? settings.replyToName|join(', ') : settings.replyToName,
-        placeholder:  'Contact Form sets this to the ‘From’ name by default.'|t('contact-form-nuances'),
+        placeholder:  'Contact Form sets this to the ‘From’ name by default.'|t('contact-form-extras'),
         disabled:     'replyToName' in overrides,
         warning:      'replyToName' in overrides ? configWarning('replyToName'),
         errors:       settings.getErrors('replyToName'),
@@ -84,10 +84,10 @@
 </div>
 
 {{ forms.lightswitchField({
-    label:        "Plain Text Only"|t('contact-form-nuances'),
+    label:        "Plain Text Only"|t('contact-form-extras'),
     id:           'plainTextOnly',
     name:         'plainTextOnly',
-    instructions: 'Sends plain-text-only emails.'|t('contact-form-nuances'),
+    instructions: 'Sends plain-text-only emails.'|t('contact-form-extras'),
     on:           settings.plainTextOnly,
     disabled:     'plainTextOnly' in overrides,
     warning:      'plainTextOnly' in overrides ? configWarning('plainTextOnly'),
@@ -96,7 +96,7 @@
 }) }}
 
 {{ forms.textField({
-    label:        "Plain Text Template"|t('contact-form-nuances'),
+    label:        "Plain Text Template"|t('contact-form-extras'),
     id:           'textTemplate',
     name:         'textTemplate',
     instructions: 'Path to file inside your `templates` folder.',
@@ -108,7 +108,7 @@
 
 <div id="htmlTemplateContainer" class="nested-fields{% if settings.plainTextOnly %} hidden{% endif %}">
     {{ forms.textField({
-        label:        "HTML Template"|t('contact-form-nuances'),
+        label:        "HTML Template"|t('contact-form-extras'),
         id:           'htmlTemplate',
         name:         'htmlTemplate',
         instructions: 'Path to file inside your `templates` folder.',

@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact Form Nuances plugin for Craft CMS 3.x
+ * Contact Form Extras plugin for Craft CMS 3.x
  *
  * Adds a bunch of additional controls (cc, bcc, reply-to, plaintext) to the Craft CMS Contact Form plugin.
  *
@@ -8,9 +8,9 @@
  * @copyright Copyright (c) Miranj Design LLP
  */
 
-namespace miranj\contactformnuances;
+namespace miranj\contactformextras;
 
-use miranj\contactformnuances\models\Settings;
+use miranj\contactformextras\models\Settings;
 
 use Craft;
 use craft\helpers\Html;
@@ -119,7 +119,7 @@ class Plugin extends craft\base\Plugin
         
         Craft::info(
             Craft::t(
-                'contact-form-nuances',
+                'contact-form-extras',
                 '{name} plugin loaded',
                 ['name' => $this->name]
             ),
@@ -150,7 +150,7 @@ class Plugin extends craft\base\Plugin
         // Get the settings that are being defined by the config file
         $overrides = Craft::$app->getConfig()->getConfigFromFile(strtolower($this->handle));
         
-        return Craft::$app->view->renderTemplate('contact-form-nuances/_settings', [
+        return Craft::$app->view->renderTemplate('contact-form-extras/_settings', [
             'settings' => $this->getSettings(),
             'overrides' => array_keys($overrides),
         ]);

@@ -1,4 +1,4 @@
-# Contact Form Nuances Changelog
+# Contact Form Extras Changelog
 
 Release notes for the Obfuscator Craft CMS plugin.
 
