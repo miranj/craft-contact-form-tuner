@@ -1,14 +1,14 @@
 <?php
 /**
- * Contact Form Extras plugin for Craft CMS 3.x
+ * Contact Form Tuner plugin for Craft CMS 3.x
  *
  * @link      https://miranj.in/
  * @copyright Copyright (c) Miranj Design LLP
  */
 
-namespace miranj\contactformextras;
+namespace miranj\contactformtuner;
 
-use miranj\contactformextras\models\Settings;
+use miranj\contactformtuner\models\Settings;
 
 use Craft;
 use craft\helpers\Html;
@@ -117,7 +117,7 @@ class Plugin extends craft\base\Plugin
         
         Craft::info(
             Craft::t(
-                'contact-form-extras',
+                'contact-form-tuner',
                 '{name} plugin loaded',
                 ['name' => $this->name]
             ),
@@ -148,7 +148,7 @@ class Plugin extends craft\base\Plugin
         // Get the settings that are being defined by the config file
         $overrides = Craft::$app->getConfig()->getConfigFromFile(strtolower($this->handle));
         
-        return Craft::$app->view->renderTemplate('contact-form-extras/_settings', [
+        return Craft::$app->view->renderTemplate('contact-form-tuner/_settings', [
             'settings' => $this->getSettings(),
             'overrides' => array_keys($overrides),
         ]);

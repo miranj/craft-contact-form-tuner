@@ -1,4 +1,4 @@
-# Contact Form Extras Changelog
+# Contact Form Tuner Changelog
 
 Release notes for the Obfuscator Craft CMS plugin.
 

@@ -4,7 +4,7 @@
  * @copyright Copyright (c) Miranj Design LLP
  */
 
-namespace miranj\contactformextras\models;
+namespace miranj\contactformtuner\models;
 
 use craft\base\Model;
 

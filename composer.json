@@ -1,5 +1,5 @@
 {
-    "name": "miranj/craft-contact-form-extras",
+    "name": "miranj/craft-contact-form-tuner",
     "description": "Adds a bunch of additional controls (cc, bcc, reply-to, force plain text) to the Craft CMS Contact Form plugin.",
     "version": "1.0.0-dev",
     "type": "craft-plugin",
@@ -18,8 +18,8 @@
         }
     ],
     "support": {
-        "docs": "https://github.com/miranj/craft-contact-form-extras/blob/master/README.md",
-        "issues": "https://github.com/miranj/craft-contact-form-extras/issues"
+        "docs": "https://github.com/miranj/craft-contact-form-tuner/blob/master/README.md",
+        "issues": "https://github.com/miranj/craft-contact-form-tuner/issues"
     },
     "require": {
         "craftcms/cms": "^3.0.0-RC1",
@@ -27,14 +27,14 @@
     },
     "autoload": {
         "psr-4": {
-          "miranj\\contactformextras\\": "src/"
+          "miranj\\contactformtuner\\": "src/"
         }
     },
     "extra": {
-        "name": "Contact Form Extras",
-        "handle": "contact-form-extras",
+        "name": "Contact Form Tuner",
+        "handle": "contact-form-tuner",
         "hasCpSettings": true,
-        "changelogUrl": "https://raw.githubusercontent.com/miranj/craft-contact-form-extras/master/CHANGELOG.md",
-        "class": "miranj\\contactformextras\\Plugin"
+        "changelogUrl": "https://raw.githubusercontent.com/miranj/craft-contact-form-tuner/master/CHANGELOG.md",
+        "class": "miranj\\contactformtuner\\Plugin"
     }
 }

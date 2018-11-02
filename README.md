@@ -1,4 +1,4 @@
-# Contact Form Extras plugin for Craft CMS 3.x
+# Contact Form Tuner plugin for Craft CMS 3.x
 
 Adds a bunch of additional controls (cc, bcc, reply-to, templates, plain text control) to the Craft CMS [Contact Form plugin][cf].
 
@@ -16,7 +16,7 @@ You can install this plugin from the [Plugin Store][ps] or with Composer.
 [ps]:https://plugins.craftcms.com/
 
 #### From the Plugin Store
-Go to the Plugin Store in your project’s Control Panel and search for “Contact Form Extras”.
+Go to the Plugin Store in your project’s Control Panel and search for “Contact Form Tuner”.
 Then click on the “Install” button in its modal window.
 
 #### Using Composer
@@ -26,14 +26,14 @@ Open your terminal and run the following commands:
     cd /path/to/project
     
     # tell composer to use the plugin
-    composer require miranj/craft-contact-form-extras
+    composer require miranj/craft-contact-form-tuner
     
     # tell Craft to install the plugin
-    ./craft install/plugin contact-form-extras
+    ./craft install/plugin contact-form-tuner
 
 ## Configuration
 
-All settings for this plugin can be configured from the Control Panel under Settings → Contact Form Extras. You can also configure the plugin programmatically by creating a `contact-form-extras.php` file in your [config folder][config]. This file supports Craft's standard [multi-environment configurations][multi], and any values defined here will override those set via the Control Panel.
+All settings for this plugin can be configured from the Control Panel under Settings → Contact Form Tuner. You can also configure the plugin programmatically by creating a `contact-form-tuner.php` file in your [config folder][config]. This file supports Craft's standard [multi-environment configurations][multi], and any values defined here will override those set via the Control Panel.
 
 [config]:https://docs.craftcms.com/v3/config/
 [multi]:https://docs.craftcms.com/v3/config/environments.html#multi-environment-configs
