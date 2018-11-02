@@ -53,8 +53,9 @@ return [
     'replyToName'   => '',
     
     'textOnly'      => false,   // enabling this forces the email to be sent in plain text only
-    'textTemplate'  => '',
-    'htmlTemplate'  => '',
+    
+    'textTemplate'  => '',      // templates have access to submitted values
+    'htmlTemplate'  => '',      // such as `fromName`, `fromEmail`, `subject` and `message`
 ];
 ```
 
