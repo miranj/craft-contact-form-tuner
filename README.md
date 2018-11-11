@@ -1,13 +1,18 @@
 # Contact Form Tuner plugin for Craft CMS 3.x
 
-Adds a bunch of additional controls (cc, bcc, reply-to, templates, plain text control) to the Craft CMS [Contact Form plugin][cf].
+This plugin extends functionality offered by the official [Contact Form][cf] plugin by allowing you to:
+- Control Cc recipients
+- Control Bcc recipients
+- Control Reply-To recipients
+- Force plain text only emails
+- Use a custom template for the plain text email body
+- Use a custom template for the HTML email body
 
+[cf]:https://github.com/craftcms/contact-form
 
 ## Requirements
 
 This plugin requires Craft CMS 3 and the [Contact Form plugin][cf] (v2.0.0 or later).
-
-[cf]:https://github.com/craftcms/contact-form
 
 ## Installation
 
@@ -38,7 +43,7 @@ All settings for this plugin can be configured from the Control Panel under Sett
 [config]:https://docs.craftcms.com/v3/config/
 [multi]:https://docs.craftcms.com/v3/config/environments.html#multi-environment-configs
 
-Here is a sample config file along with a list of all possible settings with their default values:
+Here is a sample config file along with a list of all possible settings and their default values:
 
 ```php
 <?php
