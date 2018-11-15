@@ -1,6 +1,6 @@
 # Contact Form Tuner Changelog
 
-Release notes for the Obfuscator Craft CMS plugin.
+Release notes for the Contact Form Tuner Craft CMS plugin.
 
 
 
