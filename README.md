@@ -1,6 +1,8 @@
-# Contact Form Tuner plugin for Craft CMS 3.x
+<p align="center"><img src="./src/icon.svg" width="100" height="100" alt="Contact Form Tuner icon"></p>
 
-This plugin extends functionality offered by the official [Contact Form][cf] plugin by allowing you to:
+<h1 align="center">Contact Form Tuner</h1>
+
+This [Craft CMS][] plugin extends functionality offered by the official [Contact Form][cf] plugin by allowing you to:
 - Control Cc recipients
 - Control Bcc recipients
 - Control Reply-To recipients
@@ -8,6 +10,7 @@ This plugin extends functionality offered by the official [Contact Form][cf] plu
 - Use a custom template for the plain text email body
 - Use a custom template for the HTML email body
 
+[craft cms]:https://craftcms.com
 [cf]:https://github.com/craftcms/contact-form
 
 ## Requirements
