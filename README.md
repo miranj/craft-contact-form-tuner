@@ -13,21 +13,27 @@ This [Craft CMS][] plugin extends functionality offered by the official [Contact
 [craft cms]:https://craftcms.com
 [cf]:https://github.com/craftcms/contact-form
 
+
+
 ## Requirements
 
 This plugin requires Craft CMS 3 and the [Contact Form plugin][cf] (v2.0.0 or later).
+
+
 
 ## Installation
 
 You can install this plugin from the [Plugin Store][ps] or with Composer.
 
-[ps]:https://plugins.craftcms.com/
+[ps]:https://plugins.craftcms.com/contact-form-tuner
 
 #### From the Plugin Store
+
 Go to the Plugin Store in your project’s Control Panel and search for “Contact Form Tuner”.
 Then click on the “Install” button in its modal window.
 
 #### Using Composer
+
 Open your terminal and run the following commands:
 
     # go to the project directory
@@ -39,9 +45,11 @@ Open your terminal and run the following commands:
     # tell Craft to install the plugin
     ./craft install/plugin contact-form-tuner
 
+
+
 ## Configuration
 
-All settings for this plugin can be configured from the Control Panel under Settings → Contact Form Tuner. You can also configure the plugin programmatically by creating a `contact-form-tuner.php` file in your [config folder][config]. This file supports Craft's standard [multi-environment configurations][multi], and any values defined here will override those set via the Control Panel.
+All settings for this plugin can be configured from the Control Panel under _Settings → Contact Form Tuner_. You can also configure the plugin programmatically by creating a `contact-form-tuner.php` file in your [`config/`][config] folder. This file supports Craft's standard [multi-environment configurations][multi], and any values defined here will override those set via the Control Panel.
 
 [config]:https://docs.craftcms.com/v3/config/
 [multi]:https://docs.craftcms.com/v3/config/environments.html#multi-environment-configs
@@ -66,6 +74,7 @@ return [
     'htmlTemplate'  => '',      // such as `fromName`, `fromEmail`, `subject` and `message`
 ];
 ```
+
 
 ---
 
