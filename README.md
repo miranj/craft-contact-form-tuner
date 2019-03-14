@@ -1,8 +1,9 @@
-<p align="center"><img src="./src/icon.svg" width="100" height="100" alt="Contact Form Tuner icon"></p>
+<img align="right" src="./src/icon.svg" width="100" height="100" alt="Contact Form Tuner icon">
 
-<h1 align="center">Contact Form Tuner</h1>
 
-This [Craft CMS][] plugin extends functionality offered by the official [Contact Form][cf] plugin by allowing you to:
+# Contact Form Tuner
+
+This [Craft CMS][] 3 plugin extends functionality offered by the official [Contact Form][cf] plugin by allowing you to:
 - Control Cc recipients
 - Control Bcc recipients
 - Control Reply-To recipients
@@ -13,37 +14,13 @@ This [Craft CMS][] plugin extends functionality offered by the official [Contact
 [craft cms]:https://craftcms.com
 [cf]:https://github.com/craftcms/contact-form
 
+## Contents
 
-
-## Requirements
-
-This plugin requires Craft CMS 3 and the [Contact Form plugin][cf] (v2.0.0 or later).
-
-
-
-## Installation
-
-You can install this plugin from the [Plugin Store][ps] or with Composer.
-
-[ps]:https://plugins.craftcms.com/contact-form-tuner
-
-#### From the Plugin Store
-
-Go to the Plugin Store in your project’s Control Panel and search for “Contact Form Tuner”.
-Then click on the “Install” button in its modal window.
-
-#### Using Composer
-
-Open your terminal and run the following commands:
-
-    # go to the project directory
-    cd /path/to/project
-    
-    # tell composer to use the plugin
-    composer require miranj/craft-contact-form-tuner
-    
-    # tell Craft to install the plugin
-    ./craft install/plugin contact-form-tuner
+- [Configuration](#configuration)
+- [Installation](#installation)
+- [Requirements](#requirements)
+- [Changelog](./CHANGELOG.md)
+- [License](./LICENSE.md)
 
 
 
@@ -74,6 +51,39 @@ return [
     'htmlTemplate'  => '',      // such as `fromName`, `fromEmail`, `subject` and `message`
 ];
 ```
+
+
+
+## Installation
+
+You can install this plugin from the [Plugin Store][ps] or with Composer.
+
+[ps]:https://plugins.craftcms.com/contact-form-tuner
+
+#### From the Plugin Store
+
+Go to the Plugin Store in your project’s Control Panel and search for “Contact Form Tuner”.
+Then click on the “Install” button in its modal window.
+
+#### Using Composer
+
+Open your terminal and run the following commands:
+
+    # go to the project directory
+    cd /path/to/project
+    
+    # tell composer to use the plugin
+    composer require miranj/craft-contact-form-tuner
+    
+    # tell Craft to install the plugin
+    ./craft install/plugin contact-form-tuner
+
+
+
+## Requirements
+
+This plugin requires Craft CMS 3 and the [Contact Form plugin][cf] (v2.0.0 or later).
+
 
 
 ---
