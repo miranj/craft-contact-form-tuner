@@ -4,6 +4,14 @@ Release notes for the Contact Form Tuner Craft CMS plugin.
 
 
 
+## Unreleased
+
+### Fixed
+
+- Fixed a potential namespace error ([miranj/craft-cryptographer#2](https://github.com/miranj/craft-cryptographer/issues/2))
+
+
+
 ## 1.0.0 - 2018-11-02
 
 - Initial release

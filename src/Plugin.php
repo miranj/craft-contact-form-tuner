@@ -21,7 +21,7 @@ use yii\base\Event;
  * Class Plugin
  *
  */
-class Plugin extends craft\base\Plugin
+class Plugin extends \craft\base\Plugin
 {
     
     public $hasCpSettings = true;
