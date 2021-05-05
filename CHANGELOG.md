@@ -4,10 +4,10 @@ Release notes for the Contact Form Tuner Craft CMS plugin.
 
 
 
-## Unreleased
+## 1.0.3 - 2021-05-05
 
 ### Fixed
-- Fixed bug where more Cc/Reply-To names than emails would result in an error. ([#1](https://github.com/miranj/craft-contact-form-tuner/issues/1))
+- Fixed bug where more names than emails in CC or Reply-To settings would result in an error. ([#1](https://github.com/miranj/craft-contact-form-tuner/issues/1))
 
 
 
