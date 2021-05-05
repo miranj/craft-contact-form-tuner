@@ -116,7 +116,7 @@ class Settings extends Model
         
         // Create a matching [ email => name ] array, accounting for empty/extra spots
         if (!empty($names)) {
-            $names = array_merge($names, array_fill(0, count($emails) - count($names), ''));
+            $names = array_merge($names, array_fill(0, max(count($emails) - count($names), 0), ''));
             $names = array_slice($names, 0, count($emails));
             $emails = array_combine($emails, $names);
         }

@@ -4,10 +4,16 @@ Release notes for the Contact Form Tuner Craft CMS plugin.
 
 
 
+## Unreleased
+
+### Fixed
+- Fixed bug where more Cc/Reply-To names than emails would result in an error. ([#1](https://github.com/miranj/craft-contact-form-tuner/issues/1))
+
+
+
 ## 1.0.2 - 2019-07-31
 
 ### Fixed
-
 - Fixed plugin icon
 
 
@@ -15,17 +21,14 @@ Release notes for the Contact Form Tuner Craft CMS plugin.
 ## 1.0.1 - 2019-07-30
 
 ### Fixed
-
 - Fixed a potential namespace error ([miranj/craft-cryptographer#2](https://github.com/miranj/craft-cryptographer/issues/2))
 
 
 
 ## 1.0.0 - 2018-11-02
-
 - Initial release
 
 ### Added
-
 - Added the ability to CC contact form submissions.
 - Added the ability to BCC contact form submissions.
 - Added the ability to disable the Reply-To header.
