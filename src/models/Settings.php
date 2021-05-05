@@ -7,6 +7,7 @@
 namespace miranj\contactformtuner\models;
 
 use craft\base\Model;
+use craft\helpers\StringHelper;
 
 class Settings extends Model
 {
@@ -92,10 +93,11 @@ class Settings extends Model
             return [];
         }
         
-        if (!is_array($value)) {
-            $value = explode(',', $value);
+        if (is_string($value)) {
+            $value = StringHelper::split($value);
+        } else {
+            $value = array_map('trim', $value);
         }
-        $value = array_map('trim', $value);
         
         return $value;
     }
