@@ -1,7 +1,7 @@
 {
     "name": "miranj/craft-contact-form-tuner",
     "description": "Adds a bunch of additional controls (cc, bcc, reply-to, templates, plain text control) to the Craft CMS Contact Form plugin.",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "type": "craft-plugin",
     "keywords": [
         "craft",
