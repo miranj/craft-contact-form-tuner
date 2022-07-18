@@ -7,7 +7,7 @@ Release notes for the Contact Form Tuner Craft CMS plugin.
 ## Unreleased
 
 ### Added
-- Added support for Craft 4 and Contact Form 3.
+- Added support for Craft 4 and Contact Form 3. ([#2](https://github.com/miranj/craft-contact-form-tuner/pull/2) by [boboldehampsink](https://github.com/boboldehampsink))
 
 
 
