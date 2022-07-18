@@ -3,7 +3,7 @@
 
 # Contact Form Tuner
 
-This [Craft CMS][] 3 plugin extends functionality offered by the official [Contact Form][cf] plugin by allowing you to:
+This [Craft CMS][] plugin extends functionality offered by the official [Contact Form][cf] plugin by allowing you to:
 - Control Cc recipients
 - Control Bcc recipients
 - Control Reply-To recipients
@@ -82,7 +82,7 @@ Open your terminal and run the following commands:
 
 ## Requirements
 
-This plugin requires Craft CMS 3 and the [Contact Form plugin][cf] (v2.0.0 or later).
+This plugin requires Craft CMS 3 or 4 and the [Contact Form plugin][cf] (v2.0, v3.0 or later).
 
 
 

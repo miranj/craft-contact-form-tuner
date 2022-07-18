@@ -23,9 +23,6 @@ use yii\base\Event;
  */
 class Plugin extends \craft\base\Plugin
 {
-    
-    public $hasCpSettings = true;
-    
     /**
      * @inheritdoc
      */
