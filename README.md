@@ -76,7 +76,7 @@ Open your terminal and run the following commands:
     composer require miranj/craft-contact-form-tuner
     
     # tell Craft to install the plugin
-    ./craft install/plugin contact-form-tuner
+    ./craft plugin/install contact-form-tuner
 
 
 
