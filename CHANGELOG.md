@@ -9,6 +9,9 @@ Release notes for the Contact Form Tuner Craft CMS plugin.
 ### Added
 - Email template settings fields now autosuggest existing template files.
 
+### Fixed
+- Fixed forcing plain text emails for Craft 4.
+
 
 
 ## 1.1.0 - 2022-07-19

@@ -83,32 +83,7 @@ class Plugin extends \craft\base\Plugin
             // Force plain text
             // 
             if ($settings->textOnly) {
-                // We cannot simply set the HTML to null
-                // because that does not remove the html part completely.
-                // So instead, we re-create the entire underlying message
-                // and re-add all parts except the text/html part
-                $swiftMessage = $message->getSwiftMessage();
-                $oldParts = $swiftMessage->getChildren();
-                $oldParts = array_filter($oldParts, function ($part) {
-                    return $part->getContentType() != 'text/html';
-                });
-                
-                // reset message
-                $swiftMessage->setBody(null);
-                $swiftMessage->setContentType(null);
-                $swiftMessage->setChildren([]);
-                
-                // If it remains a multi-part message, then simply re-add parts
-                if (count($oldParts) > 1) {
-                    $swiftMessage->setChildren($oldParts);
-                } elseif (count($oldParts) == 1) {
-                    // otherwise, add the single part directly, not as an attachment
-                    $part = array_pop($oldParts);
-                    $swiftMessage->setBody(
-                        $part->getBody(),
-                        $part->getContentType()
-                    );
-                }
+                $message->setHtmlBody(null);
             }
         });
         
