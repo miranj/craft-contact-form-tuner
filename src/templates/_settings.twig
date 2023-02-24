@@ -94,11 +94,12 @@
     reverseToggle:'htmlTemplateContainer',
 }) }}
 
-{{ forms.textField({
+{{ forms.autosuggestField({
     label:        "Plain Text Template"|t('contact-form-tuner'),
     id:           'textTemplate',
     name:         'textTemplate',
     instructions: 'Path to file inside your `templates` folder. This template has access to submitted form values such as `fromName` and `message`.',
+    suggestions:  craft.cp.getTemplateSuggestions(),
     value:        settings.textTemplate,
     disabled:     'textTemplate' in overrides,
     warning:      'textTemplate' in overrides ? configWarning('textTemplate'),
@@ -106,11 +107,12 @@
 }) }}
 
 <div id="htmlTemplateContainer" class="nested-fields{% if settings.textOnly %} hidden{% endif %}">
-    {{ forms.textField({
+    {{ forms.autosuggestField({
         label:        "HTML Template"|t('contact-form-tuner'),
         id:           'htmlTemplate',
         name:         'htmlTemplate',
         instructions: 'Path to file inside your `templates` folder. This template has access to submitted form values such as `fromName` and `message`.',
+        suggestions:  craft.cp.getTemplateSuggestions(),
         value:        settings.htmlTemplate,
         disabled:     'htmlTemplate' in overrides,
         warning:      'htmlTemplate' in overrides ? configWarning('htmlTemplate'),

@@ -4,6 +4,13 @@ Release notes for the Contact Form Tuner Craft CMS plugin.
 
 
 
+## Unreleased
+
+### Added
+- Email template settings fields now autosuggest existing template files.
+
+
+
 ## 1.1.0 - 2022-07-19
 
 ### Added
