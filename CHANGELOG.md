@@ -4,6 +4,13 @@ Release notes for the Contact Form Tuner Craft CMS plugin.
 
 
 
+## Unreleased
+
+### Added
+- Added support for Craft 5.
+
+
+
 ## 1.1.1 - 2023-02-25
 
 ### Added

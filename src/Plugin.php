@@ -1,6 +1,6 @@
 <?php
 /**
- * Contact Form Tuner plugin for Craft CMS 3.x
+ * Contact Form Tuner plugin for Craft CMS 3.x, 4.x, 5.x
  *
  * @link      https://miranj.in/
  * @copyright Copyright (c) Miranj Design LLP

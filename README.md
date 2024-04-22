@@ -28,8 +28,8 @@ This [Craft CMS][] plugin extends functionality offered by the official [Contact
 
 All settings for this plugin can be configured from the Control Panel under _Settings → Contact Form Tuner_. You can also configure the plugin programmatically by creating a `contact-form-tuner.php` file in your [`config/`][config] folder. This file supports Craft's standard [multi-environment configurations][multi], and any values defined here will override those set via the Control Panel.
 
-[config]:https://docs.craftcms.com/v3/config/
-[multi]:https://docs.craftcms.com/v3/config/environments.html#multi-environment-configs
+[config]:https://craftcms.com/docs/5.x/system/directory-structure.html#config
+[multi]:https://craftcms.com/docs/5.x/configure.html#multi-environment-configs
 
 Here is a sample config file along with a list of all possible settings and their default values:
 
@@ -82,7 +82,7 @@ Open your terminal and run the following commands:
 
 ## Requirements
 
-This plugin requires Craft CMS 3 or 4 and the [Contact Form plugin][cf] (v2.0, v3.0 or later).
+This plugin requires Craft CMS 3, 4, or 5 and the [Contact Form plugin][cf] (v2.0, v3.0 or later).
 
 
 
