@@ -18,6 +18,7 @@
     value:        settings.ccEmail is iterable ? settings.ccEmail|join(', ') : settings.ccEmail,
     autofocus:    true,
     disabled:     'ccEmail' in overrides,
+    class:        'ccEmail' in overrides ? 'disabled',
     warning:      'ccEmail' in overrides ? configWarning('ccEmail'),
     errors:       settings.getErrors('ccEmail'),
 }) }}
@@ -29,6 +30,7 @@
     instructions: "Separate multiple names with commas."|t('contact-form-tuner'),
     value:        settings.ccName is iterable ? settings.ccName|join(', ') : settings.ccName,
     disabled:     'ccName' in overrides,
+    class:        'ccName' in overrides ? 'disabled',
     warning:      'ccName' in overrides ? configWarning('ccName'),
     errors:       settings.getErrors('ccName'),
 }) }}
@@ -40,6 +42,7 @@
     instructions: "Separate multiple email addresses with commas."|t('contact-form-tuner'),
     value:        settings.bccEmail is iterable ? settings.bccEmail|join(', ') : settings.bccEmail,
     disabled:     'bccEmail' in overrides,
+    class:        'bccEmail' in overrides ? 'disabled',
     warning:      'bccEmail' in overrides ? configWarning('bccEmail'),
     errors:       settings.getErrors('bccEmail'),
 }) }}
@@ -65,6 +68,7 @@
         value:        settings.replyToEmail is iterable ? settings.replyToEmail|join(', ') : settings.replyToEmail,
         placeholder:  'Contact Form sets this to the ‘From’ email by default.'|t('contact-form-tuner'),
         disabled:     'replyToEmail' in overrides,
+        class:        'replyToEmail' in overrides ? 'disabled',
         warning:      'replyToEmail' in overrides ? configWarning('replyToEmail'),
         errors:       settings.getErrors('replyToEmail'),
     }) }}
@@ -77,6 +81,7 @@
         value:        settings.replyToName is iterable ? settings.replyToName|join(', ') : settings.replyToName,
         placeholder:  'Contact Form sets this to the ‘From’ name by default.'|t('contact-form-tuner'),
         disabled:     'replyToName' in overrides,
+        class:        'replyToName' in overrides ? 'disabled',
         warning:      'replyToName' in overrides ? configWarning('replyToName'),
         errors:       settings.getErrors('replyToName'),
     }) }}
