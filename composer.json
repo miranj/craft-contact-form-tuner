@@ -27,7 +27,8 @@
         "php": "^7.2.5 || ^8.0"
     },
     "require-dev": {
-        "craftcms/rector": "dev-main"
+        "craftcms/rector": "dev-main",
+        "craftcms/phpstan": "dev-main"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -48,5 +49,8 @@
         "hasCpSettings": true,
         "changelogUrl": "https://raw.githubusercontent.com/miranj/craft-contact-form-tuner/master/CHANGELOG.md",
         "class": "miranj\\contactformtuner\\Plugin"
+    },
+    "scripts": {
+        "phpstan": "phpstan --memory-limit=1G"
     }
 }
